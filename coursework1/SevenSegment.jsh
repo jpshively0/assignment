@@ -1,79 +1,79 @@
-void display(int n){
+void display(int n) {
 
+String[] segments = new String[5]; 
 
-int length = String.valueOf(n).length();
-System.out.println(length);
-int[] x = new int[length];
-
-for(int i = 0; i<length; i++){
-
-x[i] = n % 10;
-n =  n / 10;
-}
-System.out.println(x[1]);
-
-
-for(int i = 0; i < x.length / 2; i++)
-{
-    int temp = x[i];
-    x[i] = x[x.length - i - 1];
-    x[x.length - i - 1] = temp;
+    
+for (int i = 0; i < 5; i++) {
+        segments[i] = "";
 }
 
+    
+    String numStr = String.valueOf(n);
 
+    
+    for (int idx = 0; idx < numStr.length(); idx++) {
+        int digit = Character.getNumericValue(numStr.charAt(idx));
+        
+       
+        for (int i = 0; i < 5; i++) {
+            segments[i] += ssd(digit, i + 1);
+        }
+    }
 
-for(int j = 0; j<x.length; j++){
-switch(x[j])  
-{  
-      case 0:  
-        System.out.println(" _ \n| | \n|_|");  
-        break;
-		
-		case 1:  
-        System.out.println(" \n  |\n  |");  
-        break;  
-		
-		
-		case 2:  
-        System.out.println(" _ \n  |\n _ \n|\n _");  
-        break;  
-		
-		case 3:  
-        System.out.println(" _\n  |\n _ \n  |\n _");  
-        break;  
-		
-		case 4:  
-    System.out.println("   \n|_|\n  |");  
-        break;  
-		
-		case 5:  
-      System.out.println(" _ \n|_ \n _|");    
-        break;  
-		
-		case 6:  
-     System.out.println(" _ \n|_ \n|_|");    
-        break;  
-		
-		 case 7:  
-        System.out.println(" _ \n  |\n  |");  
-        break;  
-     
-	 case 8:  
-        System.out.println(" _ \n|_|\n|_|");  
-        break;  
-     
-	 case 9:  
-        System.out.println(" _ \n|_|\n _|");  
-        break;  
-
-
-
-
-
+   
+    for (String line : segments) {
+        System.out.println(line);
+    }
 }
 
 
 
-}
 
+
+
+//given a digit d and a line number n (from 1 to 5), returns a String representing line n of digit d.
+
+
+String ssd(int d, int n) {
+    switch ((d * 10) + n) {
+
+        case 11: case 41:
+            return "    |"; 
+        
+      
+        case 21: case 25:
+            return " --  "; 
+        case 22:
+            return "    |"; 
+        case 23:
+            return " --  "; 
+        case 24:
+            return "|    "; 
+
+        case 31: case 35:
+            return " --  "; 
+        case 32: case 34:
+            return "    |"; 
+        case 33:
+            return " --  ";
+
+
+        case 51: case 55:
+            return " --  "; 
+        case 52:
+            return "|    "; 
+        case 53:
+            return " --  "; 
+        case 54:
+            return "    |"; 
+
+      
+        case 81: case 83: case 85:
+            return " --  "; 
+        case 82: case 84:
+            return "|   |"; 
+
+        default:
+            return "     ";
+    }
 }
