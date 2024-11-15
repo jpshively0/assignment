@@ -42,38 +42,38 @@ String ssd(int d, int n) {
         
       
         case 21: case 25:
-            return " --  "; 
+            return " -- "; 
         case 22:
-            return "    |"; 
+            return "   |"; 
         case 23:
-            return " --  "; 
+            return " -- "; 
         case 24:
-            return "|    "; 
+            return "|   "; 
 
         case 31: case 35:
-            return " --  "; 
+            return " -- "; 
         case 32: case 34:
-            return "    |"; 
+            return "   |"; 
         case 33:
-            return " --  ";
+            return " -- ";
 
 
         case 51: case 55:
-            return " --  "; 
+            return " -- "; 
         case 52:
-            return "|    "; 
+            return "|   "; 
         case 53:
-            return " --  "; 
+            return " -- "; 
         case 54:
-            return "    |"; 
+            return "   |"; 
 
       
         case 81: case 83: case 85:
-            return " --  "; 
+            return " -- "; 
         case 82: case 84:
-            return "|   |"; 
+            return "|  |"; 
 
         default:
-            return "     ";
+            return "    ";
     }
 }
