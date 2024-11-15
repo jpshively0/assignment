@@ -8,11 +8,11 @@ for (int i = 0; i < 5; i++) {
 }
 
     
-    String numStr = String.valueOf(n);
+    String Str = String.valueOf(n);
 
     
-    for (int idx = 0; idx < numStr.length(); idx++) {
-        int digit = Character.getNumericValue(numStr.charAt(idx));
+    for (int j = 0; j < Str.length(); j++) {
+        int digit = Character.getNumericValue(Str.charAt(j));
         
        
         for (int i = 0; i < 5; i++) {
