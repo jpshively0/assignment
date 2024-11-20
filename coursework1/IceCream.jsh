@@ -18,7 +18,7 @@ if(q>3 && q!=0){
 
 //student id number: 33015648
 
-double price = 0.100;
+double price = 1.0;
 switch(flavor) {
 	case "v":
 		 price += 0.48*q;
